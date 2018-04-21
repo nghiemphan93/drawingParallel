@@ -2,13 +2,12 @@
 var express = require("express");
 var app = express();
 
-// Starting server
-var server = app.listen(4200, function(){
-  console.log("Server started at port 4200...");
-});
+
 
 var socket = require("socket.io");
 var io = socket(server);
+
+const port = process.env.PORT || 4200;
 
 
 // Listening to event connection
@@ -37,5 +36,10 @@ app.get("/", function(req, res){
   res.send("/index.html");
 });
 
+
+// Starting server
+var server = app.listen(port, function(){
+  console.log(`Server started at port ${port}...`);
+});
 
 
