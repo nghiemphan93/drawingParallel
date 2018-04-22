@@ -3,7 +3,7 @@ function setup(){
   background(51);
 
   // Setup socket
-  socket = io.connect("https://floating-woodland-33184.herokuapp.com/");
+  socket = io.connect("https://drawparallel.herokuapp.com/");
 
   // Catch data from server
   socket.on("mouse", newDrawing);
